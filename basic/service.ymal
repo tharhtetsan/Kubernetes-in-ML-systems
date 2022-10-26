@@ -1,0 +1,19 @@
+17 lines (15 sloc)  278 Bytes
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ths-app-service
+  namespace: default
+  labels:
+    app: ths-app-service
+
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+
+  selector:
+    app: ths-app

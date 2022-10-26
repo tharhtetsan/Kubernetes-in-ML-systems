@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ths-app
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ths-app
+    metadata:
+      labels:
+        app: ths-app
+
+    spec:
+      containers:
+      - name: ths-app
+        image: gpu
+        ports:
+          - name: http
+            containerPort: 8080
+            protocol: TCP
+        env:
+          - name: PORT
+            value: "8080"
