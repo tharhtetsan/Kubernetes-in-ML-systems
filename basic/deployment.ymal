@@ -12,14 +12,22 @@ spec:
       labels:
         app: ths-app
 
+  template:
+    metadata:
+      labels:
+        app: ths-app
     spec:
       containers:
-      - name: ths-app
-        image: gpu
-        ports:
-          - name: http
-            containerPort: 8080
-            protocol: TCP
-        env:
-          - name: PORT
-            value: "8080"
+        - env:
+            - name: PORT
+              value: '8080'
+          image: gpu
+          imagePullPolicy: IfNotPresent
+          name: ths-app
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          resources:
+            limits:
+              nvidia.com/gpu: '1'

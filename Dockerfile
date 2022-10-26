@@ -1,7 +1,6 @@
 FROM nvidia/cuda:11.0.3-runtime-ubuntu20.04
 
 EXPOSE 8080
-ENV PORT=8080
 
 
 

@@ -15,4 +15,4 @@ def checkVersion():
     return "Hello this is {} server :v0.0.2.2 and GPU status : {} : {}".format(os.getenv("_SERVER"),gpu_status,gpu_name)
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=False, host='0.0.0.0',port=os.getenv('PORT'))
