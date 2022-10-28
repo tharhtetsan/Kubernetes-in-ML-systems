@@ -1,7 +1,12 @@
 ## Auto scaling
 
-#### How run the application
+## Kubernetes in GCP
+#### Install nvidia driver
+```shell
+kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/nvidia-driver-installer/cos/daemonset-preloaded.yaml 
+```
 
+#### How run the application in GKE
 ```shell
 docker build . -t tharhtetsanucsm/gpu:latest
 
